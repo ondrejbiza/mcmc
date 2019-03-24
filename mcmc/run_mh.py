@@ -38,6 +38,7 @@ def main(args):
         samples.append(mh.step())
 
     # plot real distribution
+    plt.title("{:d} iterations, {:.1f} variance".format(args.iters, args.var))
     colors = sns.color_palette()
 
     x = np.linspace(-10, 20, num=1000)
@@ -48,7 +49,7 @@ def main(args):
     sns.distplot(samples, bins=30, hist=True, norm_hist=True, kde=False, color=colors[0])
 
     if args.save is not None:
-        plt.savefig(args.save, figsize=(2, 1.5), dpi=80)
+        plt.savefig(args.save, figsize=(4, 3), dpi=60)
 
     if not args.no_show:
         plt.show()
