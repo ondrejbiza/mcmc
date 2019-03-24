@@ -48,7 +48,7 @@ def main(args):
     sns.distplot(samples, bins=30, hist=True, norm_hist=True, kde=False, color=colors[0])
 
     if args.save is not None:
-        plt.savefig(args.save, figsize=(4, 3), dpi=80)
+        plt.savefig(args.save, figsize=(2, 1.5), dpi=80)
 
     if not args.no_show:
         plt.show()
